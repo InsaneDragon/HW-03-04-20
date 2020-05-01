@@ -1,0 +1,13 @@
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.exe
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.deps.json
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.runtimeconfig.json
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.runtimeconfig.dev.json
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.dll
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\bin\Debug\netcoreapp3.1\New folder.pdb
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.csprojAssemblyReference.cache
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.csproj.CoreCompileInputs.cache
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.AssemblyInfoInputs.cache
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.AssemblyInfo.cs
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.dll
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.pdb
+C:\Users\C#Developer\source\repos\Auction\Auction\Controllers\New folder\obj\Debug\netcoreapp3.1\New folder.genruntimeconfig.cache
