@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections.Generic;
 namespace New_folder
 {
     class Program
@@ -8,16 +9,16 @@ namespace New_folder
         static int GlobalLength = 21;
         static void Main(string[] args)
         {
-            int[] nums = new int[] { 24, 22, 32, 48, 13, 67, 3, 41, 31, 18, 54, 61, 22, 1, 3, 6, 27, 0, 57, 19, 24, 63, 32, 38, 45, 52 };
+            int[] nums = new int[] { 24, 22, 32, 48, 13, 67, 3, 41, 31, 18, 54, 61, 22, 1, 3, 6, 27, 0, 57, 19, 24, 63, 32, 38, 45, 52, 15, 16 };
             Task[] tasks = new Task[26];
             for (int i = 0; i < 26; i++)
             {
                 try
                 {
-                tasks[i] = Task.Run(() => Stream(nums[i]));
+                    tasks[i] = Task.Run(() => Stream(nums[i]));
                 }
-                catch(Exception)
-                {}
+                catch (Exception)
+                { }
                 Thread.Sleep(900);
             }
             tasks[0].Wait();
@@ -27,7 +28,7 @@ namespace New_folder
         {
             try
             {
-                int limit = new Random().Next(3, 7);
+                int limit = new Random().Next(3, 12);
                 int top = 0;
                 int black = top;
                 int topLim = (GlobalLength - 5) / limit;
@@ -54,45 +55,17 @@ namespace New_folder
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.CursorTop = top++;
                         Console.CursorLeft = left;
-                        switch (new Random().Next(0, 35))
+                        List<char> AlphabetList = new List<char>() { };
+                        for (char y = 'A'; y <= 'Z'; y++)
                         {
-                            case 0: System.Console.WriteLine("A"); break;
-                            case 1: System.Console.WriteLine("B"); break;
-                            case 2: System.Console.WriteLine("C"); break;
-                            case 3: System.Console.WriteLine("D"); break;
-                            case 4: System.Console.WriteLine("E"); break;
-                            case 5: System.Console.WriteLine("F"); break;
-                            case 6: System.Console.WriteLine("G"); break;
-                            case 7: System.Console.WriteLine("H"); break;
-                            case 8: System.Console.WriteLine("I"); break;
-                            case 9: System.Console.WriteLine("J"); break;
-                            case 10: System.Console.WriteLine("K"); break;
-                            case 11: System.Console.WriteLine("L"); break;
-                            case 12: System.Console.WriteLine("M"); break;
-                            case 13: System.Console.WriteLine("N"); break;
-                            case 14: System.Console.WriteLine("O"); break;
-                            case 15: System.Console.WriteLine("P"); break;
-                            case 16: System.Console.WriteLine("Q"); break;
-                            case 17: System.Console.WriteLine("R"); break;
-                            case 18: System.Console.WriteLine("S"); break;
-                            case 19: System.Console.WriteLine("T"); break;
-                            case 20: System.Console.WriteLine("U"); break;
-                            case 21: System.Console.WriteLine("V"); break;
-                            case 22: System.Console.WriteLine("W"); break;
-                            case 23: System.Console.WriteLine("X"); break;
-                            case 24: System.Console.WriteLine("Y"); break;
-                            case 25: System.Console.WriteLine("Z"); break;
-                            case 26: System.Console.WriteLine("0"); break;
-                            case 27: System.Console.WriteLine("1"); break;
-                            case 28: System.Console.WriteLine("2"); break;
-                            case 29: System.Console.WriteLine("3"); break;
-                            case 30: System.Console.WriteLine("4"); break;
-                            case 31: System.Console.WriteLine("5"); break;
-                            case 32: System.Console.WriteLine("6"); break;
-                            case 33: System.Console.WriteLine("7"); break;
-                            case 34: System.Console.WriteLine("8"); break;
-                            case 35: System.Console.WriteLine("9"); break;
+                            AlphabetList.Add(y);
                         }
+                        for (int f = 0; f <= 9; f++)
+                        {
+                            AlphabetList.Add(char.Parse(f.ToString()));
+                        }
+                        int letter = new Random().Next(0, 35);
+                        System.Console.WriteLine(AlphabetList[letter]);
                     }
                     if (top == limit)
                     {
@@ -103,15 +76,41 @@ namespace New_folder
                             System.Console.WriteLine(" ");
                         }
                     }
-
                     Thread.Sleep(8000);
                     top = black + new Random().Next(1, limit);
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
+        }
+        static async Task<int> CalculateAsyn(int i, int c, int j)
+        {
+            var x = await Task.Run(() => { return i + c + j * 99 - 2; });
+            //Some operations
+            return x;
+        }
+        static int CalculateTask(int i, int c, int j)
+        {
+            Task<int> task = Task<int>.Factory.StartNew(() => 1);
+            int u = task.Result;
+            Task<int> task2 = Task<int>.Factory.StartNew(() =>
+             {
+                 u++;
+                 return u;
+             });
+            return task2.Result;
+        }
+        static void CalculateThread()
+        {
+            Thread tr = new Thread(() =>
+              {
+                  System.Console.WriteLine("1");
+                  System.Console.WriteLine("2");
+                  //Some Operations
+              });
+              tr.Start();
         }
     }
 }
